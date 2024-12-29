@@ -55,7 +55,7 @@
  * Offset from endpoints to get nozzle to 0,0 (front/left of bed)
  * (How to center prints: https://github.com/JimBrown/MarlinTarantula/wiki/How-to-center-your-prints-(EasyConfig))
  */
-#define NOZZLE_X          0
+#define NOZZLE_X          15.68
 #define NOZZLE_Y          0
 
 /**
@@ -74,7 +74,7 @@
  * Z Axis steps per mm (Default for stock lead screw is 1600)
  * If you install a lead screw with a different pitch and/or lead, change this
  */
-#define Z_STEPS      1600 // Stock lead screw
+#define Z_STEPS      400 // Not-Stock lead screw
 
 /**
  * Z-Probe type (must be none or one of them)
@@ -127,7 +127,7 @@
 /**
  * Enable this to turn on support for two extruders
  */
-//#define DUAL_EXTRUDER // If not single nozzle, primary nozzle plugged in to E0 port
+#define DUAL_EXTRUDER // If not single nozzle, primary nozzle plugged in to E0 port
                         // and secondary plugged in to E1 port.
 //#define SINGLENOZZLE  // Enable this if you are using a single mixing nozzle (requires DUAL_EXTRUDER)
 
@@ -140,7 +140,7 @@
  * The Z value is positive if the secondary nozzle is further away from the bed than the primary and
  * negative if the secondary nozzle is closer to the bed than the primary.
  */
-#define EXTRUDER_E1_X 0
+#define EXTRUDER_E1_X -31.35
 #define EXTRUDER_E1_Y 0
 #define EXTRUDER_E1_Z 0
 
@@ -418,7 +418,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME PRINTER_NAME
+#define CUSTOM_MACHINE_NAME KnottySpider
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
