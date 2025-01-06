@@ -34,7 +34,7 @@
 /**
  * Equipment options
  */
-//#define LARGE_BED
+//#define LARGE_BED                 // Large Bed is 200x280
 #define SDSUPPORT
 //#define CHANGE_Y_DIRECTION        // If your bed homes in the wrong direction (it should move front to back) enable this.
 //#define CHANGE_X_DIRECTION        // If your X carriage homes in the wrong direction (it should move right to left) enable this.
@@ -50,6 +50,13 @@
 //#define MOTHERBOARD BOARD_MKS_BASE_HEROIC   // MKS BASE 1.0 with Heroic HR4982 stepper drivers
 //#define MOTHERBOARD BOARD_MKS_GEN_L         // Newer controller board with replacable stepper drivers
 //#define MOTHERBOARD BOARD_MKS_GEN_L_V2
+
+/**
+ * Define custom bed size. Stock is 200x200. Large Bed is 200x280.
+*/
+//#define CUSTOM_BED_SIZE
+#define BED_SIZE_X 175
+#define BED_SIZE_Y 190
 
 /**
  * Offset from endpoints to get nozzle to 0,0 (front/left of bed)
@@ -1715,12 +1722,20 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 175
-#if ENABLED(LARGE_BED)
-  #define Y_BED_SIZE 280
+#if ENABLED(CUSTOM_BED_SIZE)
+  #define X_BED_SIZE BED_SIZE_X
+  #define Y_BED_SIZE BED_SIZE_Y
 #else
-  #define Y_BED_SIZE 190
+  #define X_BED_SIZE 200
+  #if ENABLED(LARGE_BED)
+    #define Y_BED_SIZE 280
+  #else
+    #define Y_BED_SIZE 200
+  #endif
 #endif
+
+#define X_BED_SIZE BED_SIZE_X
+#define X_BED_SIZE BED_SIZE_Y
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0 - XTRA_BED_LEFT
