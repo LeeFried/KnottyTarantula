@@ -54,8 +54,8 @@
 /**
  * Define custom bed size. Stock is 200x200. Large Bed is 200x280.
 */
-//#define CUSTOM_BED_SIZE
-#define BED_SIZE_X 175
+#define CUSTOM_BED_SIZE
+#define BED_SIZE_X 190
 #define BED_SIZE_Y 190
 
 /**
